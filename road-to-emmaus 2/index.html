@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#08090d" />
+  <meta name="description" content="Three cinematic, mobile-first scroll visual novels inspired by encounters with Jesus in the Gospels." />
+  <title>Encounters — Scroll Visual Novels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="progress-track" aria-hidden="true"><div class="progress-bar"></div></div>
+
+  <button class="sound-toggle" type="button" aria-label="Toggle ambient sound" aria-pressed="true">
+    <span class="sound-icon">♪</span>
+    <span class="sound-label">On</span>
+  </button>
+
+  <button class="menu-toggle" type="button" aria-label="Open story menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+
+  <aside class="chapter-menu" aria-hidden="true">
+    <div class="chapter-menu__inner">
+      <div class="menu-heading">
+        <p class="eyebrow">Encounters</p>
+        <button class="menu-home" type="button" data-show-home>All stories</button>
+      </div>
+
+      <nav class="story-nav" aria-label="Stories and chapters">
+        <div class="story-nav__group" data-menu-story="emmaus">
+          <button class="story-nav__toggle" type="button" aria-expanded="true">
+            <span><small>Luke 24:13–35</small>Stay With Us</span><i>+</i>
+          </button>
+          <div class="story-nav__chapters">
+            <a href="#emmaus-prologue" data-story-link="emmaus">I. The Silence</a>
+            <a href="#emmaus-road" data-story-link="emmaus">II. The Road</a>
+            <a href="#emmaus-stranger" data-story-link="emmaus">III. The Stranger</a>
+            <a href="#emmaus-scriptures" data-story-link="emmaus">IV. The Story</a>
+            <a href="#emmaus-choice" data-story-link="emmaus">V. The Question</a>
+            <a href="#emmaus-table" data-story-link="emmaus">VI. The Table</a>
+            <a href="#emmaus-return" data-story-link="emmaus">VII. The Return</a>
+          </div>
+        </div>
+
+        <div class="story-nav__group" data-menu-story="storm">
+          <button class="story-nav__toggle" type="button" aria-expanded="false">
+            <span><small>Mark 4:35–41</small>Peace, Be Still</span><i>+</i>
+          </button>
+          <div class="story-nav__chapters" hidden>
+            <a href="#storm-dusk" data-story-link="storm">I. The Other Side</a>
+            <a href="#storm-deep" data-story-link="storm">II. Into the Deep</a>
+            <a href="#storm-tempest" data-story-link="storm">III. The Tempest</a>
+            <a href="#storm-sleeping" data-story-link="storm">IV. The Sleeping Teacher</a>
+            <a href="#storm-choice" data-story-link="storm">V. What Do You See?</a>
+            <a href="#storm-stillness" data-story-link="storm">VI. The Voice</a>
+          </div>
+        </div>
+
+        <div class="story-nav__group" data-menu-story="garden">
+          <button class="story-nav__toggle" type="button" aria-expanded="false">
+            <span><small>John 20:11–18</small>Called by Name</span><i>+</i>
+          </button>
+          <div class="story-nav__chapters" hidden>
+            <a href="#garden-before-dawn" data-story-link="garden">I. Before Dawn</a>
+            <a href="#garden-empty" data-story-link="garden">II. The Empty Place</a>
+            <a href="#garden-tears" data-story-link="garden">III. Why Are You Weeping?</a>
+            <a href="#garden-gardener" data-story-link="garden">IV. The Gardener</a>
+            <a href="#garden-choice" data-story-link="garden">V. Turn Around</a>
+            <a href="#garden-name" data-story-link="garden">VI. Mary</a>
+          </div>
+        </div>
+      </nav>
+      <p class="menu-note">Three Gospel encounters · One unfolding invitation</p>
+    </div>
+  </aside>
+
+  <main>
+    <section id="home" class="home-screen" aria-label="Story collection">
+      <div class="home-stars" aria-hidden="true"></div>
+      <div class="home-orbit home-orbit--one" aria-hidden="true"></div>
+      <div class="home-orbit home-orbit--two" aria-hidden="true"></div>
+
+      <header class="home-hero content-wrap">
+        <p class="eyebrow reveal">Three Gospel encounters</p>
+        <h1 class="collection-title reveal">Encounters<br /><em>with Jesus</em></h1>
+        <p class="home-intro reveal">Choose a story. Scroll slowly. Listen closely. Each journey begins with people who think they know what is happening, until Christ reveals that He has been nearer than they imagined.</p>
+        <a class="begin-link reveal" href="#story-library">Choose a journey <span>↓</span></a>
+      </header>
+
+      <div id="story-library" class="story-library content-wrap">
+        <article class="story-card story-card--emmaus reveal">
+          <div class="story-card__art" aria-hidden="true"><span class="mini-moon"></span><span class="mini-road"></span><span class="mini-walkers"></span></div>
+          <div class="story-card__meta"><span>01</span><span>Luke 24:13–35</span></div>
+          <h2>Stay With Us</h2>
+          <p>Two disciples leave Jerusalem carrying grief. A stranger joins their road and quietly turns despair into recognition.</p>
+          <button type="button" class="story-start" data-open-story="emmaus">Begin story <span>→</span></button>
+        </article>
+
+        <article class="story-card story-card--storm reveal">
+          <div class="story-card__art" aria-hidden="true"><span class="mini-lightning"></span><span class="mini-boat"></span><span class="mini-waves"></span></div>
+          <div class="story-card__meta"><span>02</span><span>Mark 4:35–41</span></div>
+          <h2>Peace, Be Still</h2>
+          <p>A boat disappears into violent water. The disciples find Jesus asleep while everything around them says they are about to die.</p>
+          <button type="button" class="story-start" data-open-story="storm">Begin story <span>→</span></button>
+        </article>
+
+        <article class="story-card story-card--garden reveal">
+          <div class="story-card__art" aria-hidden="true"><span class="mini-sun"></span><span class="mini-stone"></span><span class="mini-flower"></span></div>
+          <div class="story-card__meta"><span>03</span><span>John 20:11–18</span></div>
+          <h2>Called by Name</h2>
+          <p>Mary remains beside an empty tomb. Through tears she mistakes the risen Christ for a gardener, until He says one word.</p>
+          <button type="button" class="story-start" data-open-story="garden">Begin story <span>→</span></button>
+        </article>
+      </div>
+
+      <footer class="home-footer content-wrap">
+        <span>ENCOUNTERS</span>
+        <span>Scroll visual novels</span>
+      </footer>
+    </section>
+
+    <div class="story-view" data-story="emmaus" hidden>
+      <section id="emmaus-prologue" class="scene scene--prologue" data-chapter="The Silence">
+        <div class="scene-art" aria-hidden="true">
+          <div class="star-field"></div><div class="moon"></div>
+          <svg class="city-silhouette" viewBox="0 0 1000 420" preserveAspectRatio="none"><path d="M0 330L90 300L135 322L190 280L240 304L310 245L370 290L445 210L500 260L560 205L625 270L705 220L790 275L870 235L1000 300V420H0Z" fill="currentColor"/><path d="M360 235H540V420H360Z" fill="currentColor" opacity=".95"/><path d="M430 145H470V420H430Z" fill="currentColor" opacity=".95"/><path d="M407 145H493L450 82Z" fill="currentColor" opacity=".95"/></svg>
+        </div>
+        <div class="hero-content content-wrap">
+          <p class="eyebrow reveal">Jerusalem · The third day</p>
+          <h1 class="display-title reveal">Stay<br /><em>With Us</em></h1>
+          <p class="hero-copy reveal">A story about grief, doubt, and the moment hope walks beside you unnoticed.</p>
+          <a class="begin-link reveal" href="#emmaus-silence-text">Begin the journey <span>↓</span></a>
+        </div>
+        <div id="emmaus-silence-text" class="story-panel story-panel--bottom content-wrap">
+          <div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>The city had not stopped moving. Merchants called from the streets. Soldiers changed watch. Lamps were lit as if nothing had happened.</p></div>
+          <div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>But for Cleopas and his companion, the world had ended outside the walls three days ago.</p></div>
+        </div>
+      </section>
+
+      <section id="emmaus-road" class="scene scene--road" data-chapter="The Road">
+        <div class="sun-glow" aria-hidden="true"></div><div class="dust dust--one" aria-hidden="true"></div><div class="dust dust--two" aria-hidden="true"></div>
+        <svg class="mountains" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true"><path d="M0 440L120 310L220 390L340 240L470 370L620 210L760 365L880 270L1000 390V600H0Z" fill="currentColor" opacity=".30"/><path d="M0 495L170 390L310 470L470 330L620 455L800 340L1000 470V600H0Z" fill="currentColor" opacity=".55"/></svg>
+        <div class="road-line" aria-hidden="true"></div><div class="walkers" aria-hidden="true"><div class="walker walker--one"><span></span></div><div class="walker walker--two"><span></span></div></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter II</span><strong>The Road</strong></div>
+        <div class="story-panel content-wrap">
+          <div class="dialogue-card character reveal"><span class="speaker">Cleopas</span><p>We thought He was the one.</p></div>
+          <div class="dialogue-card character reveal"><span class="speaker">Companion</span><p>We saw Him heal people. We heard Him speak as if mercy had a voice.</p></div>
+          <div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>They walked west toward Emmaus, carrying the kind of sorrow that makes every mile feel longer.</p></div>
+        </div>
+      </section>
+
+      <section id="emmaus-stranger" class="scene scene--stranger" data-chapter="The Stranger">
+        <div class="halo-light" aria-hidden="true"></div><div class="figure figure--jesus" aria-hidden="true"><div class="figure-head"></div><div class="figure-body"></div></div>
+        <div class="olive-branches" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter III</span><strong>The Stranger</strong></div>
+        <div class="story-panel content-wrap">
+          <div class="dialogue-card stranger reveal"><span class="speaker">Stranger</span><p>What are you discussing as you walk?</p></div>
+          <div class="dialogue-card character reveal"><span class="speaker">Cleopas</span><p>Are you the only visitor to Jerusalem who does not know what has happened?</p></div>
+          <div class="dialogue-card stranger reveal"><span class="speaker">Stranger</span><p>What things?</p></div>
+          <div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>So they told Him everything, never realizing they were explaining the death of Jesus to Jesus Himself.</p></div>
+        </div>
+      </section>
+
+      <section id="emmaus-scriptures" class="scene scene--scriptures" data-chapter="The Story">
+        <div class="scroll-ribbon scroll-ribbon--a" aria-hidden="true">PROMISE · EXODUS · PASSOVER · KINGDOM · MERCY · SACRIFICE</div><div class="scroll-ribbon scroll-ribbon--b" aria-hidden="true">MOSES · PROPHETS · ISAIAH · PSALMS · COVENANT · GLORY</div><div class="scripture-light" aria-hidden="true"></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter IV</span><strong>The Story</strong></div>
+        <div class="story-panel content-wrap">
+          <div class="dialogue-card stranger reveal"><span class="speaker">Stranger</span><p>Was it not necessary that the Messiah should suffer these things and then enter into His glory?</p></div>
+          <div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>Beginning with Moses and the prophets, He gathered every scattered promise and showed them one story.</p></div>
+          <blockquote class="pull-quote reveal">“Our hearts were burning within us while He spoke to us on the road.”</blockquote>
+          <div class="reflection-card reveal"><span class="reflection-number">01</span><p>Sometimes God is nearest when the road feels emptiest.</p></div>
+        </div>
+      </section>
+
+      <section id="emmaus-choice" class="scene scene--choice" data-chapter="The Question">
+        <div class="choice-sky" aria-hidden="true"></div><div class="village" aria-hidden="true"><span class="house house--1"></span><span class="house house--2"></span><span class="house house--3"></span><span class="house house--4"></span></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter V</span><strong>The Question</strong></div>
+        <div class="choice-panel content-wrap reveal">
+          <p class="choice-intro">The road reaches Emmaus. The Stranger walks as if He intends to continue.</p><h2>What would you say?</h2>
+          <div class="choice-grid" role="group" aria-label="Choose a response">
+            <button class="choice-button" type="button" data-choice-story="emmaus" data-choice="stay"><span class="choice-index">A</span><span><strong>Stay with us.</strong><small>The day is nearly over.</small></span></button>
+            <button class="choice-button" type="button" data-choice-story="emmaus" data-choice="leave"><span class="choice-index">B</span><span><strong>Let Him continue.</strong><small>Some questions feel too dangerous.</small></span></button>
+          </div>
+          <p class="choice-result" data-choice-result="emmaus" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section id="emmaus-table" class="scene scene--table" data-chapter="The Table">
+        <div class="room" aria-hidden="true"><div class="window"><span></span></div><div class="lamp"><span></span></div><div class="table-shape"></div><div class="bread"><span></span></div><div class="hands hands--left"></div><div class="hands hands--right"></div></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter VI</span><strong>The Table</strong></div>
+        <div class="story-panel content-wrap">
+          <div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>He took the bread, blessed it, broke it, and gave it to them.</p></div>
+          <div class="revelation-text reveal"><p>Then</p><h2>their eyes<br />were opened.</h2></div>
+          <div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>They knew Him. And in that same instant, He vanished from their sight.</p></div>
+        </div>
+      </section>
+
+      <section id="emmaus-return" class="scene scene--return" data-chapter="The Return">
+        <div class="return-rays" aria-hidden="true"></div><div class="running-figures" aria-hidden="true"><div class="runner runner--one"></div><div class="runner runner--two"></div></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter VII</span><strong>The Return</strong></div>
+        <div class="story-panel content-wrap">
+          <div class="dialogue-card character reveal"><span class="speaker">Cleopas</span><p>We have to go back. Tonight.</p></div>
+          <div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>The road that had felt unbearable at sunset became a road they could not run fast enough.</p></div>
+          <div class="reflection-card reveal"><span class="reflection-number">02</span><p>Encounter becomes mission. Hope refuses to remain seated.</p></div>
+        </div>
+      </section>
+
+      <section id="emmaus-epilogue" class="scene scene--epilogue" data-chapter="Epilogue">
+        <div class="cross-light" aria-hidden="true"><span></span></div>
+        <div class="epilogue-content content-wrap">
+          <p class="eyebrow reveal">Epilogue</p><h2 class="ending-title reveal">He was there<br /><em>the whole time.</em></h2>
+          <p class="ending-copy reveal">In the questions. In the Scriptures. In the breaking of the bread. In the heart that began to burn before the eyes understood.</p>
+          <div class="personal-ending reveal" data-personal-ending="emmaus" aria-live="polite"></div>
+          <blockquote class="final-verse reveal">“Stay with us, for it is nearly evening and the day is almost over.”<cite>Luke 24:29</cite></blockquote>
+          <div class="ending-actions reveal"><button class="restart-button" type="button" data-restart-story="emmaus">Walk the road again</button><button class="return-library" type="button" data-show-home>Choose another story</button></div>
+        </div>
+        <footer><span>STAY WITH US</span><span>A scroll visual novel</span></footer>
+      </section>
+    </div>
+
+    <div class="story-view" data-story="storm" hidden>
+      <section id="storm-dusk" class="scene storm-scene storm-scene--dusk" data-chapter="The Other Side">
+        <div class="storm-sunset" aria-hidden="true"></div><div class="storm-shore" aria-hidden="true"></div><div class="storm-boat storm-boat--distant" aria-hidden="true"><span></span></div>
+        <div class="hero-content content-wrap"><p class="eyebrow reveal">Sea of Galilee · Evening</p><h1 class="display-title reveal">Peace,<br /><em>Be Still</em></h1><p class="hero-copy reveal">A story about fear, trust, and the voice that creation still remembers.</p><a class="begin-link reveal" href="#storm-dusk-text">Enter the water <span>↓</span></a></div>
+        <div id="storm-dusk-text" class="story-panel story-panel--bottom content-wrap">
+          <div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Let us go across to the other side.</p></div>
+          <div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>The crowds faded behind them. Evening settled over the lake, and the fishing boat carried Jesus and His disciples into open water.</p></div>
+        </div>
+      </section>
+
+      <section id="storm-deep" class="scene storm-scene storm-scene--deep" data-chapter="Into the Deep">
+        <div class="deep-moon" aria-hidden="true"></div><div class="water-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="storm-boat storm-boat--mid" aria-hidden="true"><span></span></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter II</span><strong>Into the Deep</strong></div>
+        <div class="story-panel content-wrap">
+          <div class="dialogue-card character reveal"><span class="speaker">Peter</span><p>The wind is changing.</p></div>
+          <div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>Fishermen knew the moods of this water. They knew how quickly cool air could fall from the hills and strike the warm lake below.</p></div>
+          <div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>But knowledge does not always quiet the body when darkness begins to move.</p></div>
+        </div>
+      </section>
+
+      <section id="storm-tempest" class="scene storm-scene storm-scene--tempest" data-chapter="The Tempest">
+        <div class="lightning lightning--one" aria-hidden="true"></div><div class="lightning lightning--two" aria-hidden="true"></div><div class="rain-field" aria-hidden="true"></div><div class="violent-wave violent-wave--back" aria-hidden="true"></div><div class="violent-wave violent-wave--front" aria-hidden="true"></div><div class="storm-boat storm-boat--tossed" aria-hidden="true"><span></span></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter III</span><strong>The Tempest</strong></div>
+        <div class="story-panel content-wrap">
+          <div class="dialogue-card character reveal"><span class="speaker">John</span><p>Another wave! Hold the side!</p></div>
+          <div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>Water broke over the boat faster than they could throw it out. The lake had become noise, weight, and blackness.</p></div>
+          <blockquote class="pull-quote pull-quote--storm reveal">Fear measures the storm.<br />Faith remembers who is in the boat.</blockquote>
+        </div>
+      </section>
+
+      <section id="storm-sleeping" class="scene storm-scene storm-scene--sleeping" data-chapter="The Sleeping Teacher">
+        <div class="boat-interior" aria-hidden="true"><span class="sleeping-figure"></span><span class="boat-rib boat-rib--one"></span><span class="boat-rib boat-rib--two"></span><span class="water-flash"></span></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter IV</span><strong>The Sleeping Teacher</strong></div>
+        <div class="story-panel content-wrap">
+          <div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>At the stern, on a cushion, Jesus was asleep.</p></div>
+          <div class="dialogue-card character reveal"><span class="speaker">Disciples</span><p>Teacher, do You not care that we are perishing?</p></div>
+          <div class="reflection-card reflection-card--blue reveal"><span class="reflection-number">01</span><p>God’s silence can feel like absence. It is not the same thing.</p></div>
+        </div>
+      </section>
+
+      <section id="storm-choice" class="scene storm-scene storm-scene--choice" data-chapter="What Do You See?">
+        <div class="storm-eye" aria-hidden="true"></div><div class="choice-wave" aria-hidden="true"></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter V</span><strong>What Do You See?</strong></div>
+        <div class="choice-panel content-wrap reveal">
+          <p class="choice-intro">The boat rises on another wall of water. Jesus opens His eyes.</p><h2>Where does your attention go?</h2>
+          <div class="choice-grid" role="group" aria-label="Choose a response">
+            <button class="choice-button" type="button" data-choice-story="storm" data-choice="waves"><span class="choice-index">A</span><span><strong>To the waves.</strong><small>They are real, loud, and close.</small></span></button>
+            <button class="choice-button" type="button" data-choice-story="storm" data-choice="jesus"><span class="choice-index">B</span><span><strong>To Jesus.</strong><small>Fear is present, but so is He.</small></span></button>
+          </div>
+          <p class="choice-result" data-choice-result="storm" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section id="storm-stillness" class="scene storm-scene storm-scene--stillness" data-chapter="The Voice">
+        <div class="still-horizon" aria-hidden="true"></div><div class="still-boat" aria-hidden="true"></div><div class="still-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter VI</span><strong>The Voice</strong></div>
+        <div class="story-panel content-wrap">
+          <div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Peace. Be still.</p></div>
+          <div class="revelation-text revelation-text--storm reveal"><p>And there was</p><h2>a great<br />calm.</h2></div>
+          <div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Why are you afraid? Have you still no faith?</p></div>
+          <div class="dialogue-card character reveal"><span class="speaker">Disciples</span><p>Who then is this, that even the wind and the sea obey Him?</p></div>
+        </div>
+      </section>
+
+      <section id="storm-epilogue" class="scene storm-scene storm-scene--epilogue" data-chapter="Epilogue">
+        <div class="calm-moon" aria-hidden="true"></div><div class="calm-reflection" aria-hidden="true"></div>
+        <div class="epilogue-content content-wrap"><p class="eyebrow reveal">Epilogue</p><h2 class="ending-title reveal">The storm heard<br /><em>His voice.</em></h2><p class="ending-copy reveal">The disciples feared the storm because it was powerful. When the water became still, they discovered a greater power sitting beside them.</p><div class="personal-ending reveal" data-personal-ending="storm" aria-live="polite"></div><blockquote class="final-verse reveal">“Who then is this, that even the wind and the sea obey Him?”<cite>Mark 4:41</cite></blockquote><div class="ending-actions reveal"><button class="restart-button" type="button" data-restart-story="storm">Cross again</button><button class="return-library" type="button" data-show-home>Choose another story</button></div></div>
+        <footer><span>PEACE, BE STILL</span><span>A scroll visual novel</span></footer>
+      </section>
+    </div>
+
+    <div class="story-view" data-story="garden" hidden>
+      <section id="garden-before-dawn" class="scene garden-scene garden-scene--dawn" data-chapter="Before Dawn">
+        <div class="garden-stars" aria-hidden="true"></div><div class="garden-arch" aria-hidden="true"></div><div class="garden-path" aria-hidden="true"></div><div class="mary-silhouette" aria-hidden="true"></div>
+        <div class="hero-content content-wrap"><p class="eyebrow reveal">Jerusalem · Before sunrise</p><h1 class="display-title reveal">Called<br /><em>by Name</em></h1><p class="hero-copy reveal">A story about grief, recognition, and the single word that changes everything.</p><a class="begin-link reveal" href="#garden-dawn-text">Enter the garden <span>↓</span></a></div>
+        <div id="garden-dawn-text" class="story-panel story-panel--bottom content-wrap"><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>Mary Magdalene came to the tomb while it was still dark.</p></div><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>She carried spices for a body. She did not yet know she was walking toward a risen Lord.</p></div></div>
+      </section>
+
+      <section id="garden-empty" class="scene garden-scene garden-scene--empty" data-chapter="The Empty Place">
+        <div class="tomb-mouth" aria-hidden="true"><span></span></div><div class="rolled-stone" aria-hidden="true"></div><div class="dawn-ray" aria-hidden="true"></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter II</span><strong>The Empty Place</strong></div>
+        <div class="story-panel content-wrap"><div class="dialogue-card character reveal"><span class="speaker">Mary</span><p>They have taken the Lord out of the tomb, and we do not know where they have laid Him.</p></div><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>Even the empty tomb first looked like another wound. Resurrection stood before her as loss because hope had not yet found a shape.</p></div></div>
+      </section>
+
+      <section id="garden-tears" class="scene garden-scene garden-scene--tears" data-chapter="Why Are You Weeping?">
+        <div class="tear-light" aria-hidden="true"></div><div class="angel-seats" aria-hidden="true"><i></i><i></i></div><div class="petal-field" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter III</span><strong>Why Are You Weeping?</strong></div>
+        <div class="story-panel content-wrap"><div class="dialogue-card stranger reveal"><span class="speaker">Angels</span><p>Woman, why are you weeping?</p></div><div class="dialogue-card character reveal"><span class="speaker">Mary</span><p>They have taken away my Lord, and I do not know where they have laid Him.</p></div><div class="reflection-card reflection-card--rose reveal"><span class="reflection-number">01</span><p>Love remains at the place where every explanation has failed.</p></div></div>
+      </section>
+
+      <section id="garden-gardener" class="scene garden-scene garden-scene--gardener" data-chapter="The Gardener">
+        <div class="garden-sun" aria-hidden="true"></div><div class="garden-leaves" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="gardener-figure" aria-hidden="true"><span></span></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter IV</span><strong>The Gardener</strong></div>
+        <div class="story-panel content-wrap"><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Woman, why are you weeping? Whom are you seeking?</p></div><div class="dialogue-card character reveal"><span class="speaker">Mary</span><p>Sir, if you have carried Him away, tell me where you have laid Him, and I will take Him away.</p></div><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>She looked directly at Jesus and did not know Him. Grief can make even glory appear ordinary.</p></div></div>
+      </section>
+
+      <section id="garden-choice" class="scene garden-scene garden-scene--choice" data-chapter="Turn Around">
+        <div class="turning-light" aria-hidden="true"></div><div class="rose-lines" aria-hidden="true"></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter V</span><strong>Turn Around</strong></div>
+        <div class="choice-panel content-wrap reveal"><p class="choice-intro">The stranger knows the question beneath every other question.</p><h2>What are you seeking?</h2><div class="choice-grid" role="group" aria-label="Choose a response"><button class="choice-button" type="button" data-choice-story="garden" data-choice="answers"><span class="choice-index">A</span><span><strong>An explanation.</strong><small>Something that makes the pain understandable.</small></span></button><button class="choice-button" type="button" data-choice-story="garden" data-choice="person"><span class="choice-index">B</span><span><strong>A person.</strong><small>Not an answer, but the Lord Himself.</small></span></button></div><p class="choice-result" data-choice-result="garden" aria-live="polite"></p></div>
+      </section>
+
+      <section id="garden-name" class="scene garden-scene garden-scene--name" data-chapter="Mary">
+        <div class="name-radiance" aria-hidden="true"></div><div class="name-letters" aria-hidden="true">MARY</div><div class="flower-bloom" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter VI</span><strong>Mary</strong></div>
+        <div class="story-panel content-wrap"><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Mary.</p></div><div class="revelation-text revelation-text--garden reveal"><p>She turned and said</p><h2>Rabboni.</h2></div><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Go to My brothers and say to them, “I am ascending to My Father and your Father, to My God and your God.”</p></div><div class="dialogue-card character reveal"><span class="speaker">Mary</span><p>I have seen the Lord.</p></div></div>
+      </section>
+
+      <section id="garden-epilogue" class="scene garden-scene garden-scene--epilogue" data-chapter="Epilogue">
+        <div class="morning-field" aria-hidden="true"></div><div class="garden-cross" aria-hidden="true"></div>
+        <div class="epilogue-content content-wrap"><p class="eyebrow reveal">Epilogue</p><h2 class="ending-title reveal">He knew<br /><em>her name.</em></h2><p class="ending-copy reveal">Recognition did not come through an argument. It came through relationship. The Shepherd called, and the one who loved Him heard her name.</p><div class="personal-ending reveal" data-personal-ending="garden" aria-live="polite"></div><blockquote class="final-verse reveal">“I have seen the Lord.”<cite>John 20:18</cite></blockquote><div class="ending-actions reveal"><button class="restart-button" type="button" data-restart-story="garden">Return to the garden</button><button class="return-library" type="button" data-show-home>Choose another story</button></div></div>
+        <footer><span>CALLED BY NAME</span><span>A scroll visual novel</span></footer>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
