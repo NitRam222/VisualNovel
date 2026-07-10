@@ -24,3 +24,15 @@ Features:
 - Hidden browser scrollbar while touch, mouse wheel, and keyboard scrolling remain functional
 
 No build step or external image files are required. Google Fonts require an internet connection; the site falls back to system fonts offline.
+
+CURRENT STORY ORDER
+1. Living Water
+2. Peace, Be Still
+3. Take Heart, Daughter
+4. Talitha Koum
+5. Come Out
+6. Let Me See
+7. Remember Me
+8. Called by Name
+9. Stay With Us
+10. Do You Love Me?
