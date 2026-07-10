@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#08090d" />
-  <meta name="description" content="Three cinematic, mobile-first scroll visual novels inspired by encounters with Jesus in the Gospels." />
+  <meta name="description" content="Five cinematic, mobile-first scroll visual novels inspired by encounters with Jesus in the Gospels." />
   <title>Encounters — Scroll Visual Novels</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -74,8 +74,36 @@
             <a href="#garden-name" data-story-link="garden">VI. Mary</a>
           </div>
         </div>
+
+        <div class="story-nav__group" data-menu-story="shore">
+          <button class="story-nav__toggle" type="button" aria-expanded="false">
+            <span><small>John 21:1–19</small>Do You Love Me?</span><i>+</i>
+          </button>
+          <div class="story-nav__chapters" hidden>
+            <a href="#shore-night" data-story-link="shore">I. The Night</a>
+            <a href="#shore-nets" data-story-link="shore">II. Empty Nets</a>
+            <a href="#shore-figure" data-story-link="shore">III. The Shore</a>
+            <a href="#shore-fire" data-story-link="shore">IV. Charcoal Fire</a>
+            <a href="#shore-choice" data-story-link="shore">V. The Question</a>
+            <a href="#shore-follow" data-story-link="shore">VI. Follow Me</a>
+          </div>
+        </div>
+
+        <div class="story-nav__group" data-menu-story="lazarus">
+          <button class="story-nav__toggle" type="button" aria-expanded="false">
+            <span><small>John 11:17–44</small>Come Out</span><i>+</i>
+          </button>
+          <div class="story-nav__chapters" hidden>
+            <a href="#lazarus-four-days" data-story-link="lazarus">I. Four Days</a>
+            <a href="#lazarus-if-here" data-story-link="lazarus">II. If You Had Been Here</a>
+            <a href="#lazarus-wept" data-story-link="lazarus">III. Jesus Wept</a>
+            <a href="#lazarus-stone" data-story-link="lazarus">IV. The Stone</a>
+            <a href="#lazarus-choice" data-story-link="lazarus">V. Do You Believe?</a>
+            <a href="#lazarus-come-out" data-story-link="lazarus">VI. Come Out</a>
+          </div>
+        </div>
       </nav>
-      <p class="menu-note">Three Gospel encounters · One unfolding invitation</p>
+      <p class="menu-note">Five Gospel encounters · One unfolding invitation</p>
     </div>
   </aside>
 
@@ -86,7 +114,7 @@
       <div class="home-orbit home-orbit--two" aria-hidden="true"></div>
 
       <header class="home-hero content-wrap">
-        <p class="eyebrow reveal">Three Gospel encounters</p>
+        <p class="eyebrow reveal">Five Gospel encounters</p>
         <h1 class="collection-title reveal">Encounters<br /><em>with Jesus</em></h1>
         <p class="home-intro reveal">Choose a story. Scroll slowly. Listen closely. Each journey begins with people who think they know what is happening, until Christ reveals that He has been nearer than they imagined.</p>
         <a class="begin-link reveal" href="#story-library">Choose a journey <span>↓</span></a>
@@ -115,6 +143,22 @@
           <h2>Called by Name</h2>
           <p>Mary remains beside an empty tomb. Through tears she mistakes the risen Christ for a gardener, until He says one word.</p>
           <button type="button" class="story-start" data-open-story="garden">Begin story <span>→</span></button>
+        </article>
+
+        <article class="story-card story-card--shore reveal">
+          <div class="story-card__art" aria-hidden="true"><span class="mini-shore-sun"></span><span class="mini-shore-boat"></span><span class="mini-embers"></span></div>
+          <div class="story-card__meta"><span>04</span><span>John 21:1–19</span></div>
+          <h2>Do You Love Me?</h2>
+          <p>Peter returns to the sea carrying the memory of his denial. On the shore, Jesus prepares breakfast and restores him beside another charcoal fire.</p>
+          <button type="button" class="story-start" data-open-story="shore">Begin story <span>→</span></button>
+        </article>
+
+        <article class="story-card story-card--lazarus reveal">
+          <div class="story-card__art" aria-hidden="true"><span class="mini-tomb"></span><span class="mini-resurrection-ray"></span><span class="mini-grave-cloth"></span></div>
+          <div class="story-card__meta"><span>05</span><span>John 11:17–44</span></div>
+          <h2>Come Out</h2>
+          <p>Four days after Lazarus is buried, Jesus enters a village filled with grief, weeps beside the tomb, and calls into the darkness.</p>
+          <button type="button" class="story-start" data-open-story="lazarus">Begin story <span>→</span></button>
         </article>
       </div>
 
@@ -337,6 +381,96 @@
         <footer><span>CALLED BY NAME</span><span>A scroll visual novel</span></footer>
       </section>
     </div>
+
+
+    <div class="story-view" data-story="shore" hidden>
+      <section id="shore-night" class="scene shore-scene shore-scene--night" data-chapter="The Night">
+        <div class="shore-stars" aria-hidden="true"></div><div class="night-sea" aria-hidden="true"></div><div class="fishing-boat fishing-boat--night" aria-hidden="true"><span></span></div><div class="distant-lanterns" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="hero-content content-wrap"><p class="eyebrow reveal">Sea of Galilee · After the resurrection</p><h1 class="display-title reveal">Do You<br /><em>Love Me?</em></h1><p class="hero-copy reveal">A story about failure, forgiveness, and the Savior who returns to the place of shame without bringing condemnation.</p><a class="begin-link reveal" href="#shore-night-text">Return to the water <span>↓</span></a></div>
+        <div id="shore-night-text" class="story-panel story-panel--bottom content-wrap"><div class="dialogue-card character reveal"><span class="speaker">Peter</span><p>I am going fishing.</p></div><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>He returned to the work he knew before Jesus called him. Behind him lay an empty tomb. Inside him remained a courtyard, a servant girl, and three denials.</p></div><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>The others climbed into the boat with him. All night they cast their nets into darkness and caught nothing.</p></div></div>
+      </section>
+
+      <section id="shore-nets" class="scene shore-scene shore-scene--nets" data-chapter="Empty Nets">
+        <div class="predawn-band" aria-hidden="true"></div><div class="net-web" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="fishing-boat fishing-boat--drifting" aria-hidden="true"><span></span></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter II</span><strong>Empty Nets</strong></div>
+        <div class="story-panel content-wrap"><div class="dialogue-card stranger reveal"><span class="speaker">Voice from the shore</span><p>Children, have you caught anything to eat?</p></div><div class="dialogue-card character reveal"><span class="speaker">Disciples</span><p>No.</p></div><div class="dialogue-card stranger reveal"><span class="speaker">Voice from the shore</span><p>Cast the net on the right side of the boat, and you will find some.</p></div><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>The net became so full they could not pull it in. Abundance entered the exact place where their strength had failed.</p></div></div>
+      </section>
+
+      <section id="shore-figure" class="scene shore-scene shore-scene--figure" data-chapter="The Shore">
+        <div class="shore-dawn" aria-hidden="true"></div><div class="shoreline-figure" aria-hidden="true"><span></span></div><div class="full-net" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="water-sparkles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter III</span><strong>The Shore</strong></div>
+        <div class="story-panel content-wrap"><div class="dialogue-card character reveal"><span class="speaker">The beloved disciple</span><p>It is the Lord.</p></div><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>Peter did not wait for the boat. He wrapped his garment around himself and threw his whole body into the sea.</p></div><blockquote class="pull-quote pull-quote--shore reveal">Some love runs toward Christ before it has found the words to explain itself.</blockquote><div class="reflection-card reflection-card--ember reveal"><span class="reflection-number">01</span><p>Peter’s failure made him ashamed. It did not make Jesus unwilling to meet him.</p></div></div>
+      </section>
+
+      <section id="shore-fire" class="scene shore-scene shore-scene--fire" data-chapter="Charcoal Fire">
+        <div class="beach-horizon" aria-hidden="true"></div><div class="charcoal-fire" aria-hidden="true"><i></i><i></i><i></i><span></span></div><div class="bread-fish" aria-hidden="true"><i></i><span></span></div><div class="smoke-ribbons" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter IV</span><strong>Charcoal Fire</strong></div>
+        <div class="story-panel content-wrap"><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>On the beach, a charcoal fire was burning. The smell was impossible to mistake. The last charcoal fire Peter remembered had lit his face while he denied knowing Jesus.</p></div><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Come and have breakfast.</p></div><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>Jesus did not begin with accusation. He fed the disciple who had failed Him.</p></div><div class="revelation-text revelation-text--shore reveal"><p>Grace returned to</p><h2>the fire.</h2></div></div>
+      </section>
+
+      <section id="shore-choice" class="scene shore-scene shore-scene--choice" data-chapter="The Question">
+        <div class="ember-halo" aria-hidden="true"></div><div class="three-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter V</span><strong>The Question</strong></div>
+        <div class="choice-panel content-wrap reveal"><p class="choice-intro">After breakfast, Jesus turns toward Peter. He asks the question three times, once for every denial.</p><h2>What do you hear?</h2><div class="choice-grid" role="group" aria-label="Choose a response"><button class="choice-button" type="button" data-choice-story="shore" data-choice="verdict"><span class="choice-index">A</span><span><strong>A verdict.</strong><small>The fear that failure has become your identity.</small></span></button><button class="choice-button" type="button" data-choice-story="shore" data-choice="invitation"><span class="choice-index">B</span><span><strong>An invitation.</strong><small>The Lord is giving love somewhere to go.</small></span></button></div><p class="choice-result" data-choice-result="shore" aria-live="polite"></p></div>
+      </section>
+
+      <section id="shore-follow" class="scene shore-scene shore-scene--follow" data-chapter="Follow Me">
+        <div class="sun-path" aria-hidden="true"></div><div class="shore-crossing" aria-hidden="true"><i></i><i></i></div><div class="shepherd-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter VI</span><strong>Follow Me</strong></div>
+        <div class="story-panel content-wrap"><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Simon, son of John, do you love Me?</p></div><div class="dialogue-card character reveal"><span class="speaker">Peter</span><p>Lord, You know everything. You know that I love You.</p></div><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Feed My sheep.</p></div><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Follow Me.</p></div><div class="revelation-text revelation-text--shore reveal"><p>His failure was not</p><h2>his name.</h2></div></div>
+      </section>
+
+      <section id="shore-epilogue" class="scene shore-scene shore-scene--epilogue" data-chapter="Epilogue">
+        <div class="shore-final-sun" aria-hidden="true"></div><div class="shore-final-water" aria-hidden="true"></div><div class="shore-final-fire" aria-hidden="true"></div>
+        <div class="epilogue-content content-wrap"><p class="eyebrow reveal">Epilogue</p><h2 class="ending-title reveal">Love had<br /><em>the final word.</em></h2><p class="ending-copy reveal">Jesus did not erase Peter’s past or pretend the denial had not happened. He entered the memory, healed it, and entrusted Peter with people to love.</p><div class="personal-ending reveal" data-personal-ending="shore" aria-live="polite"></div><blockquote class="final-verse reveal">“Lord, You know everything; You know that I love You.”<cite>John 21:17</cite></blockquote><div class="ending-actions reveal"><button class="restart-button" type="button" data-restart-story="shore">Return to the shore</button><button class="return-library" type="button" data-show-home>Choose another story</button></div></div>
+        <footer><span>DO YOU LOVE ME?</span><span>A scroll visual novel</span></footer>
+      </section>
+    </div>
+
+    <div class="story-view" data-story="lazarus" hidden>
+      <section id="lazarus-four-days" class="scene lazarus-scene lazarus-scene--four-days" data-chapter="Four Days">
+        <div class="bethany-sky" aria-hidden="true"></div><div class="bethany-hills" aria-hidden="true"></div><div class="sealed-tomb" aria-hidden="true"><span></span></div><div class="mourning-lamps" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="hero-content content-wrap"><p class="eyebrow reveal">Bethany · Four days after burial</p><h1 class="display-title reveal">Come<br /><em>Out</em></h1><p class="hero-copy reveal">A story about grief, the tears of God, and the voice that reaches where human hope can no longer follow.</p><a class="begin-link reveal" href="#lazarus-four-days-text">Enter Bethany <span>↓</span></a></div>
+        <div id="lazarus-four-days-text" class="story-panel story-panel--bottom content-wrap"><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>By the time Jesus reached Bethany, Lazarus had been in the tomb four days. The house was full of mourners. The stone was already sealed.</p></div><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>Martha heard that Jesus was coming and went out to meet Him. She carried faith and disappointment in the same sentence.</p></div></div>
+      </section>
+
+      <section id="lazarus-if-here" class="scene lazarus-scene lazarus-scene--if-here" data-chapter="If You Had Been Here">
+        <div class="split-path" aria-hidden="true"></div><div class="meeting-figures" aria-hidden="true"><i></i><i></i></div><div class="promise-orbit" aria-hidden="true"></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter II</span><strong>If You Had Been Here</strong></div>
+        <div class="story-panel content-wrap"><div class="dialogue-card character reveal"><span class="speaker">Martha</span><p>Lord, if You had been here, my brother would not have died.</p></div><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Your brother will rise.</p></div><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>I am the resurrection and the life. Whoever believes in Me, even though he dies, will live.</p></div><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Do you believe this?</p></div></div>
+      </section>
+
+      <section id="lazarus-wept" class="scene lazarus-scene lazarus-scene--wept" data-chapter="Jesus Wept">
+        <div class="rain-of-tears" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="weeping-light" aria-hidden="true"></div><div class="grief-crowd" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter III</span><strong>Jesus Wept</strong></div>
+        <div class="story-panel content-wrap"><div class="dialogue-card character reveal"><span class="speaker">Mary</span><p>Lord, if You had been here, my brother would not have died.</p></div><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>Jesus saw her weeping and saw the people weeping with her. He was deeply moved.</p></div><div class="revelation-text revelation-text--wept reveal"><p>The One who would raise him</p><h2>wept.</h2></div><div class="reflection-card reflection-card--violet reveal"><span class="reflection-number">01</span><p>Divine power did not make Jesus distant from human grief. He entered it with tears.</p></div></div>
+      </section>
+
+      <section id="lazarus-stone" class="scene lazarus-scene lazarus-scene--stone" data-chapter="The Stone">
+        <div class="tomb-wall" aria-hidden="true"><span></span></div><div class="great-stone" aria-hidden="true"></div><div class="hands-to-stone" aria-hidden="true"><i></i><i></i></div><div class="hidden-ray" aria-hidden="true"></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter IV</span><strong>The Stone</strong></div>
+        <div class="story-panel content-wrap"><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Take away the stone.</p></div><div class="dialogue-card character reveal"><span class="speaker">Martha</span><p>Lord, by now there will be an odor, for he has been dead four days.</p></div><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Did I not tell you that if you believed, you would see the glory of God?</p></div><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>The stone was too heavy for one person. Hope asked the grieving community to move together.</p></div></div>
+      </section>
+
+      <section id="lazarus-choice" class="scene lazarus-scene lazarus-scene--choice" data-chapter="Do You Believe?">
+        <div class="tomb-pulse" aria-hidden="true"></div><div class="belief-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter V</span><strong>Do You Believe?</strong></div>
+        <div class="choice-panel content-wrap reveal"><p class="choice-intro">The tomb remains closed. The air still smells of burial. Jesus asks for trust before anything has changed.</p><h2>What do you bring?</h2><div class="choice-grid" role="group" aria-label="Choose a response"><button class="choice-button" type="button" data-choice-story="lazarus" data-choice="finality"><span class="choice-index">A</span><span><strong>What I can see.</strong><small>The stone, the silence, and four irreversible days.</small></span></button><button class="choice-button" type="button" data-choice-story="lazarus" data-choice="promise"><span class="choice-index">B</span><span><strong>His promise.</strong><small>I do not know how, but I will listen for His voice.</small></span></button></div><p class="choice-result" data-choice-result="lazarus" aria-live="polite"></p></div>
+      </section>
+
+      <section id="lazarus-come-out" class="scene lazarus-scene lazarus-scene--come-out" data-chapter="Come Out">
+        <div class="open-tomb" aria-hidden="true"><span></span></div><div class="resurrection-beam" aria-hidden="true"></div><div class="lazarus-figure" aria-hidden="true"><i></i></div><div class="shock-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="chapter-label content-wrap reveal"><span>Chapter VI</span><strong>Come Out</strong></div>
+        <div class="story-panel content-wrap"><div class="dialogue-card narration reveal"><span class="speaker">Narrator</span><p>Jesus lifted His eyes and prayed. Then He faced the darkness where Lazarus lay.</p></div><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Lazarus, come out!</p></div><div class="revelation-text revelation-text--lazarus reveal"><p>The dead man</p><h2>came out.</h2></div><div class="dialogue-card stranger reveal"><span class="speaker">Jesus</span><p>Unbind him, and let him go.</p></div></div>
+      </section>
+
+      <section id="lazarus-epilogue" class="scene lazarus-scene lazarus-scene--epilogue" data-chapter="Epilogue">
+        <div class="final-tomb" aria-hidden="true"></div><div class="final-life-tree" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="final-green-light" aria-hidden="true"></div>
+        <div class="epilogue-content content-wrap"><p class="eyebrow reveal">Epilogue</p><h2 class="ending-title reveal">The tomb<br /><em>answered Him.</em></h2><p class="ending-copy reveal">Lazarus was a sign, not yet the final resurrection. At Bethany, Jesus revealed the heart that weeps with us and the authority that death itself must obey.</p><div class="personal-ending reveal" data-personal-ending="lazarus" aria-live="polite"></div><blockquote class="final-verse reveal">“Lazarus, come out!”<cite>John 11:43</cite></blockquote><div class="ending-actions reveal"><button class="restart-button" type="button" data-restart-story="lazarus">Return to Bethany</button><button class="return-library" type="button" data-show-home>Choose another story</button></div></div>
+        <footer><span>COME OUT</span><span>A scroll visual novel</span></footer>
+      </section>
+    </div>
+
   </main>
 
   <script src="script.js"></script>

@@ -1,21 +1,26 @@
-ENCOUNTERS — MOBILE SCROLL VISUAL NOVELS
+ENCOUNTERS WITH JESUS — MOBILE SCROLL VISUAL NOVELS
 
-Open index.html in a modern browser.
+Open index.html in a modern browser. Keep index.html, style.css, and script.js together in the same folder.
 
-FILES
-- index.html: Main menu and all three stories
-- style.css: Complete responsive design and animations
-- script.js: Navigation, story choices, progress, saved endings and ambient sound
+INCLUDED STORIES
+1. Stay With Us — Luke 24:13–35
+2. Peace, Be Still — Mark 4:35–41
+3. Called by Name — John 20:11–18
+4. Do You Love Me? — John 21:1–19
+5. Come Out — John 11:17–44
 
-STORIES
-1. Stay With Us — inspired by Luke 24:13–35
-2. Peace, Be Still — inspired by Mark 4:35–41
-3. Called by Name — inspired by John 20:11–18
+FEATURES
+- Mobile-first cinematic scrolling
+- Five complete Gospel-inspired visual novels
+- Expandable story and chapter navigation
+- Story-specific illustrations made entirely with CSS
+- Choices with personalized endings saved locally
+- Ambient generative sound enabled by default
+- Main story library and restart controls
+- Scroll progress, reveal animation, and subtle parallax
+- Browser back-button support
+- Reduced-motion accessibility support
+- No build step or external image files required
 
 SOUND
-Sound is enabled by default. Modern browsers block audio before a person interacts with a page, so the ambient soundtrack begins automatically on the first tap, click or key press. The sound button can turn it off at any time.
-
-NAVIGATION
-The burger button opens an expandable story menu. Every story has its own dropdown containing its chapters. New story groups can be added to the same menu structure later.
-
-No image or audio files are required. The artwork is made with HTML and CSS, and the ambient music is generated in the browser with the Web Audio API.
+Modern browsers block sound until the first interaction. Sound is enabled by default and starts after the first tap, click, or key press.

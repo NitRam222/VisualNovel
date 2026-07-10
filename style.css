@@ -768,3 +768,221 @@ body.is-home .menu-toggle { background: rgba(9,10,14,.68); }
   .story-library { grid-template-columns: repeat(3, 1fr); }
   .story-card:last-child { grid-column: auto; }
 }
+
+/* =========================================================
+   FIVE-STORY UPDATE + MOBILE OVERFLOW FIX
+   ========================================================= */
+.story-nav__toggle { min-width: 0; gap: 14px; }
+.story-nav__toggle span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-height: .96;
+}
+.story-nav__toggle i { flex: 0 0 auto; }
+.story-nav__chapters { min-width: 0; overflow: hidden; }
+.chapter-menu .story-nav__chapters a {
+  width: 100%;
+  min-width: 0;
+  padding-right: 4px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+.chapter-label {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 18px;
+  align-items: end;
+  max-width: calc(100vw - 36px);
+  overflow: hidden;
+}
+.chapter-label span { min-width: 0; white-space: nowrap; }
+.chapter-label strong {
+  min-width: 0;
+  max-width: 100%;
+  text-align: right;
+  line-height: .95;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+@media (max-width: 390px) {
+  .chapter-menu__inner { padding-inline: 18px; }
+  .story-nav__toggle { padding: 15px 14px; }
+  .story-nav__toggle span { font-size: 1.38rem; }
+  .story-nav__chapters { padding-inline: 14px; }
+  .chapter-label { gap: 10px; }
+  .chapter-label span { font-size: .52rem; letter-spacing: .11em; }
+  .chapter-label strong { font-size: 1.15rem; }
+}
+
+/* New collection cards */
+.story-card--shore .story-card__art {
+  background: radial-gradient(circle at 68% 24%, rgba(255,209,133,.72), transparent 17%), linear-gradient(#1b2639 0%,#b9674d 57%,#2d2523 78%,#0e1113 100%);
+}
+.mini-shore-sun { position:absolute; top:43px; right:58px; width:58px; aspect-ratio:1; border-radius:50%; background:#ffe0a1; box-shadow:0 0 65px rgba(255,213,139,.65); }
+.mini-shore-boat { position:absolute; left:34%; bottom:58px; width:145px; height:42px; transform:translateX(-50%) rotate(2deg); border-radius:0 0 70% 70%; background:#171417; box-shadow:0 18px 28px rgba(0,0,0,.35); }
+.mini-shore-boat::before { content:""; position:absolute; left:48%; bottom:38px; width:4px; height:68px; background:#171417; }
+.mini-embers { position:absolute; right:22%; bottom:42px; width:72px; height:24px; border-radius:50%; background:radial-gradient(circle at 30% 40%,#fff0bf 0 3px,#ee9e4b 4px 10px,transparent 11px),radial-gradient(circle at 70% 48%,#ffe6a6 0 3px,#d45d32 4px 12px,transparent 13px); filter:drop-shadow(0 0 14px #ef7d3e); }
+
+.story-card--lazarus .story-card__art {
+  background: radial-gradient(circle at 54% 42%, rgba(194,235,180,.22), transparent 28%), linear-gradient(#161328 0%,#372d49 47%,#262a27 74%,#0b0e0d 100%);
+}
+.mini-tomb { position:absolute; top:58px; left:50%; width:180px; height:190px; transform:translateX(-50%); border-radius:50% 50% 8% 8%; background:linear-gradient(145deg,#5b5861,#24252b); box-shadow:0 28px 50px rgba(0,0,0,.35); }
+.mini-tomb::after { content:""; position:absolute; left:50%; bottom:0; width:55%; height:72%; transform:translateX(-50%); border-radius:50% 50% 0 0; background:#050708; }
+.mini-resurrection-ray { position:absolute; top:30px; left:50%; width:85px; height:230px; transform:translateX(-50%); background:linear-gradient(rgba(218,255,192,.34),transparent); clip-path:polygon(42% 0,58% 0,100% 100%,0 100%); filter:blur(4px); }
+.mini-grave-cloth { position:absolute; z-index:2; left:50%; bottom:25px; width:42px; height:104px; transform:translateX(-50%); border-radius:42% 42% 16% 16%; background:repeating-linear-gradient(4deg,#ddd8c9 0 9px,#aaa69d 10px 13px); opacity:.8; }
+
+/* =========================================================
+   DO YOU LOVE ME? — JOHN 21
+   ========================================================= */
+.shore-scene { min-height: 170svh; }
+.shore-scene--night { min-height: 210svh; background:radial-gradient(circle at 78% 18%,rgba(209,223,236,.11),transparent 18%),linear-gradient(#060b17 0%,#101b2a 43%,#18272e 66%,#080b0d 100%); }
+.shore-stars { position:absolute; inset:0 0 auto; height:76vh; opacity:.46; background-image:radial-gradient(circle,#fff 0 1px,transparent 1.4px),radial-gradient(circle,rgba(193,218,235,.8) 0 1px,transparent 1.5px); background-size:100px 100px,157px 157px; background-position:12px 17px,68px 41px; mask-image:linear-gradient(#000,transparent); }
+.night-sea { position:absolute; top:43vh; inset-inline:-10%; height:65vh; background:repeating-radial-gradient(ellipse at 50% 0,rgba(100,145,169,.13) 0 2px,transparent 3px 29px),linear-gradient(#102332,#071017); transform:rotate(-2deg); }
+.fishing-boat { position:absolute; z-index:2; width:190px; height:58px; border-radius:0 0 70% 70%; background:linear-gradient(#51322a,#171416); filter:drop-shadow(0 20px 24px rgba(0,0,0,.4)); }
+.fishing-boat::before { content:""; position:absolute; left:49%; bottom:52px; width:5px; height:105px; background:#1b1718; }
+.fishing-boat span { position:absolute; left:50%; bottom:63px; width:92px; height:76px; background:rgba(210,223,219,.08); clip-path:polygon(0 0,0 100%,100% 85%); }
+.fishing-boat--night { top:52vh; left:50%; transform:translateX(-50%) scale(.9); animation:shore-boat-bob 4.2s ease-in-out infinite; }
+@keyframes shore-boat-bob { 50% { transform:translateX(-50%) translateY(-9px) rotate(1.5deg) scale(.9); } }
+.distant-lanterns i { position:absolute; top:52vh; width:5px; aspect-ratio:1; border-radius:50%; background:#f4c67b; box-shadow:0 0 16px #f4a95b; animation:lantern-flicker 2.8s ease-in-out infinite; }
+.distant-lanterns i:nth-child(1){left:17%}.distant-lanterns i:nth-child(2){right:18%;top:57vh;animation-delay:-1s}.distant-lanterns i:nth-child(3){left:31%;top:63vh;animation-delay:-2s}
+@keyframes lantern-flicker { 50% { opacity:.35; scale:.7; } }
+
+.shore-scene--nets { background:radial-gradient(circle at 55% 15%,rgba(242,197,133,.16),transparent 21%),linear-gradient(#111a2a,#364457 42%,#6f5b58 63%,#0b1115); }
+.predawn-band { position:absolute; top:26vh; inset-inline:0; height:34vh; background:linear-gradient(transparent,rgba(215,139,102,.22),transparent); filter:blur(8px); }
+.net-web { position:absolute; top:34vh; left:50%; width:82vw; max-width:480px; height:42vh; transform:translateX(-50%) rotate(-4deg); border:2px solid rgba(204,218,213,.18); border-radius:47%; background:repeating-linear-gradient(27deg,transparent 0 25px,rgba(215,225,220,.11) 26px 27px),repeating-linear-gradient(153deg,transparent 0 25px,rgba(215,225,220,.11) 26px 27px); mask-image:radial-gradient(ellipse,#000 55%,transparent 72%); animation:net-drift 5s ease-in-out infinite alternate; }
+@keyframes net-drift { to { transform:translateX(-50%) translateY(18px) rotate(3deg); } }
+.net-web i { position:absolute; width:10px; height:22px; border-radius:50%; background:rgba(224,196,146,.35); }
+.net-web i:nth-child(1){left:22%;top:30%}.net-web i:nth-child(2){left:42%;top:48%}.net-web i:nth-child(3){right:27%;top:33%}.net-web i:nth-child(4){right:40%;bottom:18%}.net-web i:nth-child(5){left:31%;bottom:23%}
+.fishing-boat--drifting { top:55vh; left:50%; transform:translateX(-50%) scale(.82); }
+
+.shore-scene--figure { background:radial-gradient(circle at 70% 18%,rgba(255,222,160,.54),transparent 21%),linear-gradient(#856268,#e0a56b 37%,#637a72 62%,#101717); }
+.shore-dawn { position:absolute; top:9vh; right:8%; width:125px; aspect-ratio:1; border-radius:50%; background:#ffe2a2; box-shadow:0 0 110px rgba(255,221,154,.65); }
+.shoreline-figure { position:absolute; top:31vh; left:50%; width:115px; height:300px; transform:translateX(-50%); background:linear-gradient(90deg,#161917,#51483d,#171a18); clip-path:polygon(35% 0,65% 0,100% 100%,0 100%); filter:drop-shadow(0 25px 30px rgba(0,0,0,.3)); }
+.shoreline-figure::before { content:""; position:absolute; left:50%; top:-38px; width:62px; height:72px; transform:translateX(-50%); border-radius:50%; background:#25251f; }
+.shoreline-figure span { position:absolute; top:76px; left:-35px; width:185px; height:38px; border-radius:50%; background:#37352e; }
+.full-net { position:absolute; top:56vh; left:50%; width:78vw; max-width:430px; height:29vh; transform:translateX(-50%); border-radius:50%; border:2px solid rgba(224,226,207,.18); background:repeating-linear-gradient(35deg,transparent 0 19px,rgba(230,228,205,.12) 20px 21px),repeating-linear-gradient(145deg,transparent 0 19px,rgba(230,228,205,.12) 20px 21px); }
+.full-net i { position:absolute; width:18px; height:8px; border-radius:50%; background:#d4b679; box-shadow:0 0 8px rgba(238,202,135,.3); }
+.full-net i:nth-child(1){left:12%;top:36%}.full-net i:nth-child(2){left:28%;top:62%}.full-net i:nth-child(3){left:43%;top:25%}.full-net i:nth-child(4){right:35%;top:50%}.full-net i:nth-child(5){right:17%;top:30%}.full-net i:nth-child(6){right:27%;bottom:16%}.full-net i:nth-child(7){left:20%;bottom:14%}
+.water-sparkles i { position:absolute; top:62vh; width:32px; height:2px; background:rgba(255,232,184,.58); box-shadow:0 0 10px rgba(255,224,166,.48); animation:sparkle-water 2.4s ease-in-out infinite; }
+.water-sparkles i:nth-child(1){left:9%}.water-sparkles i:nth-child(2){left:31%;top:69vh;animation-delay:-.6s}.water-sparkles i:nth-child(3){right:38%;top:58vh;animation-delay:-1.2s}.water-sparkles i:nth-child(4){right:12%;top:72vh;animation-delay:-1.7s}.water-sparkles i:nth-child(5){left:55%;top:77vh;animation-delay:-2s}
+@keyframes sparkle-water { 50% { scale:1.8 1; opacity:.25; } }
+.pull-quote--shore { color:#ffe0aa; border-color:rgba(255,216,150,.26); }
+.reflection-card--ember { color:#321b13; background:linear-gradient(145deg,#f3d2a0,#c56b43); }
+
+.shore-scene--fire { min-height:200svh; background:radial-gradient(circle at 50% 42%,rgba(229,112,53,.25),transparent 26%),linear-gradient(#79534a,#d59b67 30%,#392d29 56%,#0b0c0d); }
+.beach-horizon { position:absolute; inset:45vh 0 auto; height:45vh; background:linear-gradient(rgba(65,104,111,.45),#262d2c 42%,#181614 43%); clip-path:polygon(0 8%,18% 13%,34% 7%,51% 12%,69% 6%,84% 11%,100% 7%,100% 100%,0 100%); }
+.charcoal-fire { position:absolute; top:53vh; left:50%; width:165px; height:54px; transform:translateX(-50%); border-radius:50%; background:#17100d; box-shadow:0 22px 35px rgba(0,0,0,.4),0 0 60px rgba(220,84,36,.3); }
+.charcoal-fire i { position:absolute; bottom:14px; left:50%; width:36px; height:82px; transform-origin:50% 100%; border-radius:70% 15% 65% 30%; background:linear-gradient(#fff1a2,#f18939 50%,#b52d21); filter:drop-shadow(0 0 14px #f06c35); animation:flame 1.4s ease-in-out infinite alternate; }
+.charcoal-fire i:nth-child(1){transform:translateX(-50%) rotate(-17deg)}.charcoal-fire i:nth-child(2){height:64px;transform:translateX(-18px) rotate(20deg);animation-delay:-.5s}.charcoal-fire i:nth-child(3){height:52px;transform:translateX(5px) rotate(32deg);animation-delay:-.9s}
+@keyframes flame { to { scale:.78 1.12; rotate:5deg; } }
+.charcoal-fire span { position:absolute; inset:auto 18px 5px; height:14px; border-radius:50%; background:repeating-linear-gradient(90deg,#251611 0 25px,#77321f 26px 36px); }
+.bread-fish { position:absolute; top:66vh; left:50%; width:250px; height:80px; transform:translateX(-50%); }
+.bread-fish i { position:absolute; left:20px; width:84px; height:45px; border-radius:55% 55% 42% 42%; background:linear-gradient(#d9a767,#8d542f); }
+.bread-fish span { position:absolute; right:14px; top:8px; width:105px; height:33px; border-radius:70% 24% 24% 70%; background:#87928c; clip-path:polygon(0 50%,20% 0,83% 12%,100% 50%,83% 88%,20% 100%); }
+.smoke-ribbons i { position:absolute; top:40vh; left:50%; width:18px; height:130px; border-radius:50%; border-left:2px solid rgba(235,220,201,.17); filter:blur(2px); animation:smoke-rise 5s ease-in infinite; }
+.smoke-ribbons i:nth-child(2){margin-left:28px;animation-delay:-1.7s}.smoke-ribbons i:nth-child(3){margin-left:-34px;animation-delay:-3.2s}
+@keyframes smoke-rise { from{transform:translateY(90px) scale(.7);opacity:.4}to{transform:translateY(-90px) translateX(35px) scale(1.5);opacity:0} }
+.revelation-text--shore h2 { color:#ffd599; text-shadow:0 0 45px rgba(242,130,62,.38); }
+
+.shore-scene--choice { min-height:145svh; background:linear-gradient(#352521,#7f4938 44%,#171514); }
+.ember-halo { position:absolute; top:13vh; left:50%; width:88vw; max-width:520px; aspect-ratio:1; transform:translateX(-50%); border-radius:50%; background:radial-gradient(circle,rgba(240,134,71,.22),transparent 62%); box-shadow:0 0 0 1px rgba(244,179,103,.06),0 0 0 55px rgba(244,179,103,.025); }
+.three-rings i { position:absolute; top:25vh; left:50%; width:56vw; max-width:330px; aspect-ratio:1; transform:translateX(-50%); border:1px solid rgba(255,200,132,.14); border-radius:50%; animation:question-ring 5s ease-out infinite; }
+.three-rings i:nth-child(2){animation-delay:1.6s}.three-rings i:nth-child(3){animation-delay:3.2s}
+@keyframes question-ring { from{scale:.35;opacity:.8}to{scale:1.4;opacity:0} }
+
+.shore-scene--follow { min-height:205svh; background:radial-gradient(circle at 50% 19%,rgba(255,224,159,.55),transparent 22%),linear-gradient(#a76553,#e6b371 37%,#65776d 63%,#111714); }
+.sun-path { position:absolute; top:12vh; left:50%; width:145px; aspect-ratio:1; transform:translateX(-50%); border-radius:50%; background:#ffe7aa; box-shadow:0 0 120px rgba(255,224,156,.67); }
+.shore-crossing i { position:absolute; top:48vh; width:65px; height:190px; background:#111513; clip-path:polygon(35% 0,65% 0,100% 100%,0 100%); filter:drop-shadow(0 25px 25px rgba(0,0,0,.3)); }
+.shore-crossing i::before { content:""; position:absolute; left:50%; top:-25px; width:42px; aspect-ratio:1; transform:translateX(-50%); border-radius:50%; background:#171915; }
+.shore-crossing i:first-child{left:34%;transform:scale(.88)}.shore-crossing i:last-child{right:31%}
+.shepherd-lines { position:absolute; inset:67vh -10% auto; height:30vh; }
+.shepherd-lines i { position:absolute; left:-5%; width:110%; height:65px; border-top:2px solid rgba(233,214,164,.2); border-radius:50%; }
+.shepherd-lines i:nth-child(1){top:0}.shepherd-lines i:nth-child(2){top:22%}.shepherd-lines i:nth-child(3){top:45%}.shepherd-lines i:nth-child(4){top:68%}
+.revelation-text--shore h2 { font-size:clamp(4.8rem,21vw,8rem); }
+.shore-scene--epilogue { min-height:132svh; background:radial-gradient(circle at 50% 24%,rgba(255,211,136,.2),transparent 31%),linear-gradient(#8b564d,#c8895e 32%,#354b49 62%,#080c0d); }
+.shore-scene--epilogue::after { display:none; }
+.shore-final-sun { position:absolute; top:8vh; left:50%; width:110px; aspect-ratio:1; transform:translateX(-50%); border-radius:50%; background:#ffe2a1; box-shadow:0 0 100px rgba(255,218,149,.55); }
+.shore-final-water { position:absolute; inset:40vh 0 0; background:linear-gradient(rgba(77,121,122,.68),#102122); clip-path:polygon(0 7%,15% 12%,31% 6%,47% 11%,63% 5%,81% 10%,100% 6%,100% 100%,0 100%); }
+.shore-final-fire { position:absolute; top:48vh; left:50%; width:90px; height:24px; transform:translateX(-50%); border-radius:50%; background:#25130f; box-shadow:0 0 28px #e46331,0 0 65px rgba(232,92,40,.35); }
+
+/* =========================================================
+   COME OUT — JOHN 11
+   ========================================================= */
+.lazarus-scene { min-height: 172svh; }
+.lazarus-scene--four-days { min-height:210svh; background:radial-gradient(circle at 75% 18%,rgba(174,151,205,.13),transparent 20%),linear-gradient(#0b0b18,#201a31 42%,#3c3439 68%,#090b0b); }
+.bethany-sky { position:absolute; inset:0 0 auto; height:60vh; opacity:.36; background-image:radial-gradient(circle,#fff 0 1px,transparent 1.4px); background-size:124px 124px; mask-image:linear-gradient(#000,transparent); }
+.bethany-hills { position:absolute; inset:37vh -10% auto; height:45vh; background:#17171c; clip-path:polygon(0 40%,10% 25%,22% 44%,36% 18%,49% 39%,65% 20%,78% 42%,90% 26%,100% 43%,100% 100%,0 100%); box-shadow:inset 0 25px 50px rgba(112,79,120,.08); }
+.sealed-tomb { position:absolute; top:42vh; left:50%; width:80vw; max-width:440px; height:42vh; transform:translateX(-50%); border-radius:50% 50% 8% 8%; background:linear-gradient(145deg,#57545c,#26272c); box-shadow:0 30px 65px rgba(0,0,0,.38); }
+.sealed-tomb span { position:absolute; right:-12%; bottom:-6%; width:54%; aspect-ratio:1; border-radius:48% 52% 46% 54%; background:linear-gradient(145deg,#69656d,#2c2d32); box-shadow:-24px 22px 42px rgba(0,0,0,.4); }
+.mourning-lamps i { position:absolute; top:66vh; width:9px; height:14px; border-radius:50%; background:#efc27f; box-shadow:0 0 20px #e5984f; animation:lantern-flicker 3s ease-in-out infinite; }
+.mourning-lamps i:nth-child(1){left:12%}.mourning-lamps i:nth-child(2){left:29%;top:72vh;animation-delay:-.8s}.mourning-lamps i:nth-child(3){right:29%;top:70vh;animation-delay:-1.7s}.mourning-lamps i:nth-child(4){right:10%;animation-delay:-2.3s}
+
+.lazarus-scene--if-here { background:radial-gradient(circle at 50% 22%,rgba(216,199,170,.16),transparent 25%),linear-gradient(#30273b,#6d5361 43%,#343632 68%,#0d0f0e); }
+.split-path { position:absolute; top:32vh; left:50%; width:60vw; max-width:350px; height:68vh; transform:translateX(-50%) perspective(220px) rotateX(10deg); clip-path:polygon(44% 0,56% 0,100% 100%,0 100%); background:linear-gradient(#9b8570,#272824); }
+.meeting-figures i { position:absolute; top:46vh; width:74px; height:220px; background:#151616; clip-path:polygon(35% 0,65% 0,100% 100%,0 100%); filter:drop-shadow(0 25px 25px rgba(0,0,0,.3)); }
+.meeting-figures i::before { content:""; position:absolute; left:50%; top:-28px; width:45px; aspect-ratio:1; transform:translateX(-50%); border-radius:50%; background:#191a18; }
+.meeting-figures i:first-child{left:26%;transform:scale(.86)}.meeting-figures i:last-child{right:24%}
+.promise-orbit { position:absolute; top:14vh; left:50%; width:84vw; max-width:500px; aspect-ratio:1; transform:translateX(-50%); border-radius:50%; border:1px solid rgba(232,211,176,.08); box-shadow:0 0 0 60px rgba(232,211,176,.02),0 0 0 120px rgba(232,211,176,.012); }
+
+.lazarus-scene--wept { background:radial-gradient(circle at 50% 34%,rgba(200,193,227,.17),transparent 27%),linear-gradient(#171728,#3e354e 48%,#171b1c); }
+.rain-of-tears i { position:absolute; top:-8vh; width:2px; height:22vh; background:linear-gradient(transparent,rgba(201,215,232,.36),transparent); transform:rotate(8deg); animation:tear-fall 4.8s linear infinite; }
+.rain-of-tears i:nth-child(1){left:9%}.rain-of-tears i:nth-child(2){left:26%;animation-delay:-1s}.rain-of-tears i:nth-child(3){left:44%;animation-delay:-2.4s}.rain-of-tears i:nth-child(4){right:38%;animation-delay:-.6s}.rain-of-tears i:nth-child(5){right:19%;animation-delay:-3s}.rain-of-tears i:nth-child(6){right:5%;animation-delay:-1.8s}
+@keyframes tear-fall { to { transform:translateY(100vh) rotate(8deg); opacity:0; } }
+.weeping-light { position:absolute; top:17vh; left:50%; width:78vw; max-width:450px; height:58vh; transform:translateX(-50%); background:radial-gradient(ellipse,rgba(226,218,235,.18),transparent 66%); }
+.grief-crowd i { position:absolute; top:48vh; width:48px; height:150px; border-radius:48% 48% 12% 12%; background:#111216; }
+.grief-crowd i::before { content:""; position:absolute; top:-22px; left:10px; width:29px; aspect-ratio:1; border-radius:50%; background:#111216; }
+.grief-crowd i:nth-child(1){left:4%;transform:scale(.8)}.grief-crowd i:nth-child(2){left:20%;top:55vh;transform:scale(.68)}.grief-crowd i:nth-child(3){left:50%;transform:translateX(-50%) scale(1.08)}.grief-crowd i:nth-child(4){right:20%;top:54vh;transform:scale(.7)}.grief-crowd i:nth-child(5){right:3%;transform:scale(.82)}
+.revelation-text--wept h2 { color:#ded6ed; font-size:clamp(6rem,28vw,10rem); text-shadow:0 0 48px rgba(204,189,228,.28); }
+.reflection-card--violet { color:#241c2c; background:linear-gradient(145deg,#ddd2e8,#9b82ad); }
+
+.lazarus-scene--stone { min-height:195svh; background:radial-gradient(circle at 50% 39%,rgba(193,226,171,.09),transparent 24%),linear-gradient(#1c1b27,#39343c 49%,#111414); }
+.tomb-wall { position:absolute; top:17vh; left:50%; width:90vw; max-width:530px; height:62vh; transform:translateX(-50%); border-radius:50% 50% 4% 4%; background:linear-gradient(145deg,#5d5960,#28292d); box-shadow:inset 0 0 60px rgba(0,0,0,.28),0 35px 70px rgba(0,0,0,.36); }
+.tomb-wall span { position:absolute; left:50%; bottom:0; width:56%; height:77%; transform:translateX(-50%); border-radius:50% 50% 0 0; background:#050708; }
+.great-stone { position:absolute; z-index:2; top:47vh; left:50%; width:235px; aspect-ratio:1; transform:translateX(-50%); border-radius:47% 53% 44% 56%; background:linear-gradient(145deg,#767178,#303136); box-shadow:0 28px 52px rgba(0,0,0,.45); }
+.hands-to-stone i { position:absolute; z-index:3; top:62vh; width:130px; height:34px; border-radius:999px; background:#8e654f; }
+.hands-to-stone i:first-child{left:-12px;transform:rotate(-11deg)}.hands-to-stone i:last-child{right:-12px;transform:rotate(11deg)}
+.hidden-ray { position:absolute; top:24vh; left:50%; width:90px; height:65vh; transform:translateX(-50%); background:linear-gradient(rgba(214,255,188,.14),transparent); clip-path:polygon(45% 0,55% 0,100% 100%,0 100%); filter:blur(6px); }
+
+.lazarus-scene--choice { min-height:145svh; background:linear-gradient(#171625,#40364d 44%,#151a18); }
+.tomb-pulse { position:absolute; top:15vh; left:50%; width:85vw; max-width:500px; aspect-ratio:1; transform:translateX(-50%); border-radius:50%; background:radial-gradient(circle,rgba(186,229,164,.15),transparent 62%); animation:tomb-breathe 4.5s ease-in-out infinite; }
+@keyframes tomb-breathe { 50% { scale:1.08; opacity:.55; } }
+.belief-lines i { position:absolute; top:26vh; left:50%; width:52vw; max-width:310px; aspect-ratio:1; transform:translateX(-50%); border:1px solid rgba(206,238,187,.11); border-radius:50%; animation:belief-ring 6s ease-out infinite; }
+.belief-lines i:nth-child(2){animation-delay:1.5s}.belief-lines i:nth-child(3){animation-delay:3s}.belief-lines i:nth-child(4){animation-delay:4.5s}
+@keyframes belief-ring { from{scale:.25;opacity:.75}to{scale:1.6;opacity:0} }
+
+.lazarus-scene--come-out { min-height:210svh; background:radial-gradient(circle at 50% 35%,rgba(206,255,179,.34),transparent 27%),linear-gradient(#242131,#4c4550 38%,#425247 65%,#0d120f); }
+.open-tomb { position:absolute; top:14vh; left:50%; width:90vw; max-width:540px; height:66vh; transform:translateX(-50%); border-radius:50% 50% 4% 4%; background:linear-gradient(145deg,#66636a,#2b2e2e); box-shadow:0 35px 75px rgba(0,0,0,.4); }
+.open-tomb span { position:absolute; left:50%; bottom:0; width:58%; height:78%; transform:translateX(-50%); border-radius:50% 50% 0 0; background:#040605; box-shadow:inset 0 0 70px rgba(183,233,163,.14); }
+.resurrection-beam { position:absolute; z-index:2; top:5vh; left:50%; width:180px; height:78vh; transform:translateX(-50%); background:linear-gradient(rgba(224,255,199,.58),rgba(183,239,151,.08),transparent); clip-path:polygon(44% 0,56% 0,100% 100%,0 100%); filter:blur(6px); animation:beam-breathe 4s ease-in-out infinite; }
+@keyframes beam-breathe { 50% { opacity:.55; scale:1.08 1; } }
+.lazarus-figure { position:absolute; z-index:3; top:37vh; left:50%; width:84px; height:250px; transform:translateX(-50%); border-radius:44% 44% 12% 12%; background:repeating-linear-gradient(4deg,#ded9c9 0 14px,#aaa79d 15px 19px); filter:drop-shadow(0 0 25px rgba(213,255,190,.28)); animation:lazarus-step 4s ease-in-out infinite alternate; }
+.lazarus-figure::before { content:""; position:absolute; left:50%; top:-36px; width:52px; aspect-ratio:1; transform:translateX(-50%); border-radius:50%; background:repeating-linear-gradient(10deg,#ddd8c9 0 9px,#aaa69c 10px 13px); }
+@keyframes lazarus-step { to { transform:translateX(-50%) translateY(16px); } }
+.shock-rings { position:absolute; z-index:1; top:46vh; left:50%; width:70vw; max-width:420px; aspect-ratio:1; transform:translateX(-50%); }
+.shock-rings i { position:absolute; inset:0; border:1px solid rgba(215,255,191,.2); border-radius:50%; animation:shock-out 4.8s ease-out infinite; }
+.shock-rings i:nth-child(2){animation-delay:1.5s}.shock-rings i:nth-child(3){animation-delay:3s}
+@keyframes shock-out { from{scale:.2;opacity:.8}to{scale:1.45;opacity:0} }
+.revelation-text--lazarus h2 { color:#e4ffd1; text-shadow:0 0 48px rgba(190,246,155,.4); }
+
+.lazarus-scene--epilogue { min-height:134svh; background:radial-gradient(circle at 50% 27%,rgba(199,244,168,.19),transparent 31%),linear-gradient(#282233,#5e4f5d 34%,#435649 66%,#090d0a); }
+.lazarus-scene--epilogue::after { display:none; }
+.final-tomb { position:absolute; top:12vh; left:50%; width:250px; height:250px; transform:translateX(-50%); border-radius:50% 50% 7% 7%; background:linear-gradient(145deg,#66636b,#272b29); }
+.final-tomb::after { content:""; position:absolute; left:50%; bottom:0; width:55%; height:72%; transform:translateX(-50%); border-radius:50% 50% 0 0; background:#050706; }
+.final-green-light { position:absolute; top:5vh; left:50%; width:170px; height:62vh; transform:translateX(-50%); background:linear-gradient(rgba(215,255,187,.36),transparent); clip-path:polygon(44% 0,56% 0,100% 100%,0 100%); filter:blur(7px); }
+.final-life-tree { position:absolute; top:35vh; left:50%; width:5px; height:37vh; transform:translateX(-50%); background:#1a251b; }
+.final-life-tree i { position:absolute; left:50%; bottom:46%; width:95px; height:44px; border-radius:100% 0 100% 0; background:#263f2c; transform-origin:0 50%; }
+.final-life-tree i:nth-child(1){transform:rotate(-35deg)}.final-life-tree i:nth-child(2){transform:rotate(35deg) scale(.9)}.final-life-tree i:nth-child(3){bottom:63%;transform:rotate(-54deg) scale(.7)}.final-life-tree i:nth-child(4){bottom:68%;transform:rotate(54deg) scale(.68)}.final-life-tree i:nth-child(5){bottom:82%;transform:rotate(5deg) scale(.52)}
+
+@media (min-width: 700px) {
+  .story-library { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .story-card:last-child { grid-column: 1 / -1; width: min(100%, 560px); justify-self: center; }
+}
+
+@media (min-width: 1050px) {
+  .story-library { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .story-card:last-child { grid-column: auto; width: auto; }
+  .story-card:nth-last-child(2) { grid-column: 1 / 2; }
+}

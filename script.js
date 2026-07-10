@@ -194,6 +194,18 @@ const chordSets = {
     [164.81, 246.94, 329.63],
     [220.00, 329.63, 440.00]
   ],
+  shore: [
+    [146.83, 220.00, 329.63],
+    [164.81, 246.94, 369.99],
+    [130.81, 196.00, 293.66],
+    [174.61, 261.63, 392.00]
+  ],
+  lazarus: [
+    [110.00, 164.81, 246.94],
+    [123.47, 185.00, 277.18],
+    [98.00, 146.83, 220.00],
+    [130.81, 196.00, 293.66]
+  ],
   home: [
     [130.81, 196.00, 261.63],
     [146.83, 220.00, 293.66],
@@ -229,6 +241,12 @@ function playAmbiencePhrase() {
 
   if (activeStory === 'storm') {
     createTone(49, 8.4, 0, 0.009);
+  }
+  if (activeStory === 'lazarus') {
+    createTone(55, 8.8, 0, 0.006);
+  }
+  if (activeStory === 'shore') {
+    createTone(293.66, 5.4, 1.1, 0.006);
   }
 }
 
@@ -328,6 +346,30 @@ const endings = {
     },
     default: 'The risen Christ does not only reveal what happened. He reveals Himself and calls each disciple personally.',
     next: 'garden-name'
+  },
+  shore: {
+    verdict: {
+      result: 'You hear a verdict. Shame expects every question to become an accusation.',
+      final: 'You first heard a verdict. Yet Jesus did not ask Peter to crush him. He asked because love was still present, and He gave that love a mission: feed My sheep.'
+    },
+    invitation: {
+      result: 'You hear an invitation. Jesus is not trapping Peter in the past; He is leading him through it.',
+      final: 'You heard an invitation. Christ returned Peter to the place of memory, restored his love, and trusted him with a future larger than his failure.'
+    },
+    default: 'Jesus does not define Peter by the worst night of his life. He restores him personally, then calls him forward.',
+    next: 'shore-follow'
+  },
+  lazarus: {
+    finality: {
+      result: 'You bring what you can see. The stone and the silence feel more certain than any promise.',
+      final: 'You brought the finality you could see. Jesus did not despise that fear. He wept beside it, then spoke into the darkness with an authority the tomb could not resist.'
+    },
+    promise: {
+      result: 'You bring His promise. Nothing visible has changed, but you make room for His voice.',
+      final: 'You held to His promise before the stone moved. Faith did not deny death; it listened for the One who is the resurrection and the life.'
+    },
+    default: 'At Bethany, Jesus reveals both the tenderness that weeps and the divine authority that calls life out of death.',
+    next: 'lazarus-come-out'
   }
 };
 
@@ -386,7 +428,9 @@ document.querySelectorAll('[data-restart-story]').forEach((button) => {
 const parallaxItems = [
   ['.moon', 0.06], ['.sun-glow', 0.035], ['.mountains', 0.025], ['.figure--jesus', 0.02], ['.cross-light', 0.03],
   ['.storm-sunset', 0.04], ['.deep-moon', 0.04], ['.calm-moon', 0.035],
-  ['.garden-path', 0.018], ['.garden-sun', 0.035], ['.name-radiance', 0.02]
+  ['.garden-path', 0.018], ['.garden-sun', 0.035], ['.name-radiance', 0.02],
+  ['.shore-dawn', 0.035], ['.charcoal-fire', 0.018], ['.sun-path', 0.03],
+  ['.sealed-tomb', 0.018], ['.weeping-light', 0.024], ['.resurrection-beam', 0.018]
 ].flatMap(([selector, speed]) => [...document.querySelectorAll(selector)].map((element) => ({ element, speed })));
 
 let parallaxTicking = false;
