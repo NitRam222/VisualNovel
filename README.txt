@@ -1,26 +1,26 @@
-ENCOUNTERS WITH JESUS — MOBILE SCROLL VISUAL NOVELS
+ENCOUNTERS WITH JESUS — TEN SCROLL VISUAL NOVELS
 
-Open index.html in a modern browser. Keep index.html, style.css, and script.js together in the same folder.
+Open index.html in a modern browser. Keep index.html, style.css, and script.js in the same folder.
 
-INCLUDED STORIES
+Included stories:
 1. Stay With Us — Luke 24:13–35
 2. Peace, Be Still — Mark 4:35–41
 3. Called by Name — John 20:11–18
 4. Do You Love Me? — John 21:1–19
 5. Come Out — John 11:17–44
+6. Living Water — John 4:4–30, 39–42
+7. Talitha Koum — Mark 5:21–43
+8. Take Heart, Daughter — Mark 5:25–34
+9. Let Me See — Mark 10:46–52
+10. Remember Me — Luke 23:32–43
 
-FEATURES
+Features:
 - Mobile-first cinematic scrolling
-- Five complete Gospel-inspired visual novels
-- Expandable story and chapter navigation
-- Story-specific illustrations made entirely with CSS
-- Choices with personalized endings saved locally
-- Ambient generative sound enabled by default
-- Main story library and restart controls
-- Scroll progress, reveal animation, and subtle parallax
-- Browser back-button support
-- Reduced-motion accessibility support
-- No build step or external image files required
+- Ten expandable story menus with chapter navigation
+- Subtle in-scene chapter labels
+- Story choices with saved personal endings
+- Ambient generated sound enabled by default after the first interaction
+- CSS illustrations, parallax, reveal animation, browser history support
+- Hidden browser scrollbar while touch, mouse wheel, and keyboard scrolling remain functional
 
-SOUND
-Modern browsers block sound until the first interaction. Sound is enabled by default and starts after the first tap, click, or key press.
+No build step or external image files are required. Google Fonts require an internet connection; the site falls back to system fonts offline.

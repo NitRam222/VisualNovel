@@ -65,14 +65,30 @@ window.addEventListener('scroll', updateProgress, { passive: true });
 ------------------------------ */
 function scrollToTarget(targetId, smooth = false) {
   const target = targetId ? document.getElementById(targetId) : null;
-  window.requestAnimationFrame(() => {
-    if (target) {
-      target.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+
+  // Wait for hidden story views to finish entering the layout before measuring.
+  window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+    const top = targetId === 'home'
+      ? 0
+      : target
+        ? target.getBoundingClientRect().top + window.scrollY
+        : 0;
+
+    // The numeric form is intentionally used for instant jumps. Using
+    // behavior: 'auto' inherited html's smooth-scroll rule and could leave
+    // the reader between two chapters after switching stories.
+    if (smooth) {
+      window.scrollTo({ top, behavior: 'smooth' });
     } else {
-      window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+      const root = document.documentElement;
+      const previousBehavior = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      window.scrollTo(0, top);
+      root.style.scrollBehavior = previousBehavior;
     }
+
     updateProgress();
-  });
+  }));
 }
 
 function markCurrentStory(story) {
@@ -206,6 +222,36 @@ const chordSets = {
     [98.00, 146.83, 220.00],
     [130.81, 196.00, 293.66]
   ],
+  well: [
+    [146.83, 220.00, 329.63],
+    [164.81, 246.94, 369.99],
+    [196.00, 293.66, 440.00],
+    [130.81, 196.00, 293.66]
+  ],
+  talitha: [
+    [123.47, 185.00, 277.18],
+    [138.59, 207.65, 311.13],
+    [164.81, 246.94, 329.63],
+    [110.00, 164.81, 246.94]
+  ],
+  daughter: [
+    [138.59, 207.65, 311.13],
+    [164.81, 246.94, 329.63],
+    [123.47, 185.00, 277.18],
+    [174.61, 261.63, 349.23]
+  ],
+  bartimaeus: [
+    [130.81, 196.00, 293.66],
+    [146.83, 220.00, 329.63],
+    [196.00, 293.66, 392.00],
+    [164.81, 246.94, 369.99]
+  ],
+  thief: [
+    [82.41, 123.47, 196.00],
+    [98.00, 146.83, 220.00],
+    [110.00, 164.81, 261.63],
+    [130.81, 196.00, 293.66]
+  ],
   home: [
     [130.81, 196.00, 261.63],
     [146.83, 220.00, 293.66],
@@ -247,6 +293,12 @@ function playAmbiencePhrase() {
   }
   if (activeStory === 'shore') {
     createTone(293.66, 5.4, 1.1, 0.006);
+  }
+  if (activeStory === 'thief') {
+    createTone(41.2, 9.2, 0, 0.005);
+  }
+  if (activeStory === 'bartimaeus') {
+    createTone(392, 4.8, 1.6, 0.0045);
   }
 }
 
@@ -370,6 +422,67 @@ const endings = {
     },
     default: 'At Bethany, Jesus reveals both the tenderness that weeps and the divine authority that calls life out of death.',
     next: 'lazarus-come-out'
+  },
+  well: {
+    shame: {
+      result: 'You reach for the old shame. Hiding feels safer because it is familiar.',
+      final: 'You carried the old shame for another moment. Yet Jesus had already spoken a truer word over you: fully known, still invited, and offered living water.'
+    },
+    witness: {
+      result: 'You leave the jar. What once made you hide becomes the place from which you testify.',
+      final: 'You received the freedom of being known and loved. The woman who avoided her town became the voice that led it toward Jesus.'
+    },
+    default: 'At the well, Jesus shows that truth without love crushes, while love without truth cannot free. In Him, both meet.',
+    next: 'well-jar'
+  },
+
+  daughter: {
+    hide: {
+      result: 'You move toward the edge of the crowd. Healing has come, but the old instinct to disappear remains.',
+      final: 'You chose to hide. Yet Jesus stopped because He desired more than a secret cure. He wanted the woman to know publicly that she was not contamination, interruption, or burden, but daughter.'
+    },
+    speak: {
+      result: 'You step forward trembling and tell Him the whole truth. Nothing hidden makes Him turn away.',
+      final: 'You stepped into the light. Jesus met the whole truth without disgust and gave the healed woman a name of belonging before everyone: daughter.'
+    },
+    default: 'Jesus heals the wound and then addresses the isolation it created. His mercy restores both body and belonging.',
+    next: 'daughter-name'
+  },
+  bartimaeus: {
+    small: {
+      result: 'You make the request smaller. Disappointment has trained the heart to protect itself from hope.',
+      final: 'You asked for less than the heart desired. Jesus’ question remains gentle and direct: what do you want Me to do for you? He invites honesty, not because He lacks knowledge, but because desire spoken to Him becomes prayer.'
+    },
+    see: {
+      result: 'You name the deepest longing without apology: Lord, let me see.',
+      final: 'You named the full desire. Bartimaeus received sight, but the deeper miracle was that he recognized the One worth following once his eyes were opened.'
+    },
+    default: 'Jesus stops for the voice others silence and asks the person others define by need to speak for himself.',
+    next: 'bartimaeus-sight'
+  },
+  thief: {
+    despair: {
+      result: 'You let the past close the final door. Despair claims that even Jesus must agree with your sentence.',
+      final: 'You felt it was too late. The Gospel places this man beside Jesus precisely to contradict that despair. Mercy does not call evil good, but no repentant heart reaches Christ beyond the hour He can save.'
+    },
+    remember: {
+      result: 'You ask for no excuse and offer no bargain. You simply entrust yourself to Jesus.',
+      final: 'You prayed, “Remember me.” The answer exceeded the request: not someday, but today; not merely remembered, but with Christ in paradise.'
+    },
+    default: 'The good thief brings no achievement, only repentance and trust. Jesus answers with immediate, personal mercy.',
+    next: 'thief-today'
+  },
+  talitha: {
+    lastword: {
+      result: 'You hold the messenger’s last word. Fear treats death as the only voice still speaking.',
+      final: 'You held the word “too late.” Jesus did not condemn the fear behind it. He entered the room anyway and revealed that death does not receive the final word in His presence.'
+    },
+    hand: {
+      result: 'You hold to the hand of Jesus. The room is still silent, but He has not surrendered it.',
+      final: 'You trusted the hand that remained in the room. Christ met the child not as a case to solve, but as a beloved little girl to awaken.'
+    },
+    default: 'In Jairus’s house, the authority of Jesus is inseparable from His tenderness. He takes the hand others have already let go.',
+    next: 'talitha-arise'
   }
 };
 
@@ -430,7 +543,12 @@ const parallaxItems = [
   ['.storm-sunset', 0.04], ['.deep-moon', 0.04], ['.calm-moon', 0.035],
   ['.garden-path', 0.018], ['.garden-sun', 0.035], ['.name-radiance', 0.02],
   ['.shore-dawn', 0.035], ['.charcoal-fire', 0.018], ['.sun-path', 0.03],
-  ['.sealed-tomb', 0.018], ['.weeping-light', 0.024], ['.resurrection-beam', 0.018]
+  ['.sealed-tomb', 0.018], ['.weeping-light', 0.024], ['.resurrection-beam', 0.018],
+  ['.well-sun', 0.035], ['.truth-light', 0.02], ['.blue-radiance', 0.018],
+  ['.distant-house', 0.025], ['.gold-voice', 0.02], ['.room-dawn', 0.018],
+  ['.twelve-rings', 0.018], ['.moving-light', 0.022], ['.encircling-light', 0.016],
+  ['.sound-tunnel', 0.018], ['.vertical-light', 0.02], ['.opening-iris', 0.012],
+  ['.eclipse-sun', 0.03], ['.crown-of-thorns-halo', 0.016], ['.paradise-gate', 0.015]
 ].flatMap(([selector, speed]) => [...document.querySelectorAll(selector)].map((element) => ({ element, speed })));
 
 let parallaxTicking = false;
